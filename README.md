@@ -1,9 +1,9 @@
-# Desafio: Aprenda na Prática Programação Orientada a Objetos
+# Desafio: Aprendendo na Prática Programação Orientada a Objetos
 
-Desafio reealizado no âmbito do Bootcamp Santander Code Girls, da  Digital Innovation One, realizado em julho e agosto de 2022.
+Desafio realizado no âmbito do Bootcamp Santander Code Girls, da Digital Innovation One, realizado em julho e agosto de 2022.
 
 ## Objetivo
-Alicar conceitos de abstração de domínios, criação de classes, herança, atributos e métodos.
+Aplicar conceitos de abstração de domínios, criação de classes, herança, atributos e métodos.
 
 ## Estrutura de pastas
 O workspace contém duas pastas:
