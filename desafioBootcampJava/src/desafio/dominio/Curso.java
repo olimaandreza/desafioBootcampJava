@@ -16,7 +16,7 @@ public class Curso extends Conteudo {
         this.cargaHoraria = cargaHoraria;
     }
 
-    /* toString */
+    /* Sobrescrita toString */
     @Override
     public String toString() {
         // TODO Auto-generated method stub
@@ -27,6 +27,7 @@ public class Curso extends Conteudo {
 
     }
 
+    /* Sobrescrita do método do Conteúdo */
     @Override
     public double calcularXp() {
         // TODO Auto-generated method stub

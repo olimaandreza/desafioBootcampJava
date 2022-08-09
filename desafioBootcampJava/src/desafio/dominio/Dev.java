@@ -5,13 +5,14 @@ import java.util.Optional;
 import java.util.Set;
 
 public class Dev {
+    /* Atributos */
     private String nome;
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
     private Optional<Conteudo> conteudo;
 
     
-
+    /* Getters and Setters */
     public String getNome() {
         return nome;
     }
@@ -37,7 +38,7 @@ public class Dev {
     }
 
     
-
+    /* Sobrescrita de hashCode e Equals */
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -75,21 +76,31 @@ public class Dev {
         return true;
     }
 
+    /* Método para indicar inscrição do Dev em Bootcamp */
     public void inscreverBootcamp(Bootcamp bootcamp){
-        this.conteudosInscritos.addAll(bootcamp.getConteudos());
+        //Adiciona os conteúdos do Bootcamp na lista de Cursos Inscritos do Dev
+        this.conteudosInscritos.addAll(bootcamp.getConteudos()); 
+
+        //Adiciona o nome do Dev na lista de Devs inscritos
         bootcamp.getDevsInscritos().add(this);
     };
 
+    /* Método para indicar a conclusão de um curso */
     public void progredir(){
+        //Os cursos do bootcamp devem ser concluídos na ordem em que foram incluídos
         conteudo = this.conteudosInscritos.stream().findFirst();
+
+        // Adiciona o curso na lista de Conteúdos Concluídos e retira da lista de conteúdos Inscritos
         if(conteudo.isPresent()){
             this.conteudosConcluidos.add(conteudo.get());
             this.conteudosInscritos.remove(conteudo.get());
         } else {
+            // Se não tem nenhum inscrito, erro
             System.err.println("Você não está matriculado em nenhum conteúdo.");
         }
     };
 
+    /* Calcula o total de XP no Bootcamp */
     public double calcularTotalXp(){
         return this.conteudosConcluidos
                 .stream()

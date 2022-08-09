@@ -6,6 +6,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Bootcamp {
+    /* Atributos */
     private String nome;
     private String descricao;
     private final LocalDate dataInicial = LocalDate.now();
@@ -13,6 +14,7 @@ public class Bootcamp {
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
     
+    /* Getters and Setters */
     public String getNome() {
         return nome;
     }
@@ -43,6 +45,8 @@ public class Bootcamp {
     public void setConteudos(Set<Conteudo> conteudos) {
         this.conteudos = conteudos;
     }
+
+    /* Sobrescrita de HashCode and Equals */
     @Override
     public int hashCode() {
         final int prime = 31;
